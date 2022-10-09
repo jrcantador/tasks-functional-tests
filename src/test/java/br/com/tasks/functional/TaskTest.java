@@ -15,7 +15,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class TaskTest {
 	
-	public static String remote_url_chrome = "http://hub-1:4444/wd/hub";
+	public static String remote_url_chrome = "http://hub:4444/wd/hub";
 
 	public WebDriver acessarAplicacao() throws MalformedURLException {
 		ChromeOptions options = new ChromeOptions();
