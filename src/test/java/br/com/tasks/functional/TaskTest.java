@@ -29,7 +29,7 @@ public class TaskTest {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.id("task")).sendKeys("Teste via selenium");
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.findElement(By.id("dueDate")).sendKeys("10/10/2020");
+			driver.findElement(By.id("dueDate")).sendKeys("10/10/2022");
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.id("saveButton")).click();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
