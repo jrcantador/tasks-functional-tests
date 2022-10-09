@@ -26,10 +26,15 @@ public class TaskTest {
 		WebDriver driver = acessarAplicacao();
 		try {
 			driver.findElement(By.id("addTodo")).click();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.id("tasks")).sendKeys("Teste via selenium");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.id("dueDate")).sendKeys("10/10/2020");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.id("saveButton")).click();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			String message = driver.findElement(By.id("message")).getText();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			Assert.assertEquals("Success", message);
 		} finally {
 			driver.quit();
