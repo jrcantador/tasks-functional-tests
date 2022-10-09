@@ -6,16 +6,15 @@ import java.net.URL;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class TaskTest {	
-	public Capabilities chromeCapabilities = DesiredCapabilities.chrome();
+public class TaskTest {		
 
 	public WebDriver acessarAplicacao() throws MalformedURLException {
-		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://hub:4444/wd/hub"), chromeCapabilities);
+		ChromeOptions chromeOptions = new ChromeOptions();
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://hub:4444/wd/hub"), chromeOptions);	
 		driver.navigate().to("http://tomcat:8000/tasks");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
