@@ -35,7 +35,7 @@ public class TaskTest {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			String message = driver.findElement(By.id("message")).getText();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			Assert.assertEquals("Success", message);
+			Assert.assertEquals("Success!", message);
 		} finally {
 			driver.quit();
 		}
