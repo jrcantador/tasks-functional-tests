@@ -1,25 +1,21 @@
 package br.com.tasks.functional;
 
-
 import java.util.concurrent.TimeUnit;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class TaskTest {
-	
-	public static String remote_url_chrome = "http://hub:4444/wd/hub";
+public class TaskTest {	
+	public Capabilities chromeCapabilities = DesiredCapabilities.chrome();
 
 	public WebDriver acessarAplicacao() throws MalformedURLException {
-		ChromeOptions options = new ChromeOptions();
-		RemoteWebDriver driver = new RemoteWebDriver(new URL(remote_url_chrome), options);
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://hub:4444/wd/hub"), chromeCapabilities);
 		driver.navigate().to("http://tomcat:8000/tasks");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
